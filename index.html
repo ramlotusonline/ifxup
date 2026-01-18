@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>I FIX UP | Computer Hardware & Software</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            background: #f7fafc;
+            color: #0f172a
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 18px
+        }
+
+        section {
+            padding: 85px 0
+        }
+
+        /* ---------------- NAVBAR ---------------- */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+            background: #ffffff;
+            /* MENU BACKGROUND */
+            border-bottom: 2px solid #cccccc;
+            /* red bottom line */
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: auto;
+            padding: 14px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            transition: .25s;
+        }
+
+        /* BRAND + LOGO */
+        .brand {
+            display: flex;
+            gap: 10px;
+            align-items: center
+        }
+
+        .brandLogo {
+            width: 52px;
+            height: 52px;
+            object-fit: contain;
+            border-radius: 14px;
+            background: #fff;
+            padding: 1px;
+            border: 1px solid rgba(15, 23, 42, .10);
+            box-shadow: 0 12px 30px rgba(15, 23, 42, .08);
+            transition: .25s;
+        }
+
+        .brandTitle {
+            font-weight: 800;
+            /* little bold */
+            letter-spacing: .4px;
+            font-size: 24px;
+            color: #000000;
+            /* RED */
+            text-transform: uppercase;
+        }
+
+
+        .brandSub {
+            font-size: 10px;
+            color: #475569;
+            font-weight: 900;
+            margin-top: 2px
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 18px
+        }
+
+        nav a {
+            font-size: 14px;
+            font-weight: 700;
+            color: #0f172a;
+            padding: 8px 10px;
+            border-radius: 12px;
+            transition: .2s
+        }
+
+        nav a:hover {
+            background: #eef2ff
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 16px;
+            border-radius: 14px;
+            font-weight: 700;
+            font-size: 14px;
+            color: #fff;
+            background: linear-gradient(90deg, #25c0eb, #1dcfd8);
+            box-shadow: 0 16px 35px rgba(37, 99, 235, .18);
+            transition: .2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px)
+        }
+
+        .btn2 {
+            display: inline-block;
+            padding: 10px 16px;
+            border-radius: 14px;
+            font-weight: 700;
+            font-size: 14px;
+            color: #0f172a;
+            border: 1px solid rgba(15, 23, 42, .12);
+            background: #fff;
+            transition: .2s;
+        }
+
+        .btn2:hover {
+            transform: translateY(-2px);
+            background: #f1f5f9
+        }
+
+        /* NAV SHRINK */
+        header.scrolled {
+            background: rgba(255, 255, 255, .95);
+            box-shadow: 0 18px 50px rgba(15, 23, 42, .10)
+        }
+
+        header.scrolled .nav {
+            padding: 10px 18px
+        }
+
+        header.scrolled .brandLogo {
+            width: 46px;
+            height: 46px
+        }
+
+        /* --------------- HERO --------------- */
+        .hero {
+            padding-top: 110px
+        }
+
+        .heroGrid {
+            display: grid;
+            grid-template-columns: 1.15fr .85fr;
+            gap: 26px;
+            align-items: center
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: #f1a19b;
+            color: #166534;
+            font-weight: 700;
+            font-size: 13px;
+            width: fit-content;
+            margin-bottom: 16px
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #2563eb
+        }
+
+        h1 {
+            font-size: 48px;
+            line-height: 1.15;
+            margin-bottom: 12px
+        }
+
+        .muted {
+            color: #475569;
+            line-height: 1.85
+        }
+
+        .actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 20px
+        }
+
+        .heroCard {
+            border-radius: 26px;
+            background: #fff;
+            border: 1px solid rgba(15, 23, 42, .08);
+            box-shadow: 0 26px 80px rgba(15, 23, 42, .08);
+            overflow: hidden;
+        }
+
+        .heroImg {
+            height: 260px;
+            background: url("home.jpg") center/cover no-repeat;
+        }
+
+        .heroBody {
+            padding: 18px
+        }
+
+        .heroBody h3 {
+            font-size: 18px;
+            margin-bottom: 6px
+        }
+
+        .stats {
+            margin-top: 14px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px
+        }
+
+        .stat {
+            padding: 12px;
+            border-radius: 16px;
+            background: #f8fafc;
+            border: 1px solid rgba(15, 23, 42, .06);
+            text-align: center
+        }
+
+        .stat strong {
+            display: block;
+            font-weight: 700
+        }
+
+        .stat span {
+            display: block;
+            font-size: 12px;
+            color: #64748b
+        }
+
+        /* SECTION TITLES */
+        .title {
+            font-size: 34px;
+            margin-bottom: 10px
+        }
+
+        .subtitle {
+            max-width: 700px;
+            color: #475569;
+            line-height: 1.8
+        }
+
+        /* --------------- ABOUT --------------- */
+        .aboutGrid {
+            margin-top: 26px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            align-items: center
+        }
+
+        .aboutImg {
+            height: 380px;
+            border-radius: 26px;
+            background: url("about.jpg") center/cover no-repeat;
+            border: 1px solid rgba(15, 23, 42, .08);
+            box-shadow: 0 26px 80px rgba(15, 23, 42, .08);
+        }
+
+
+        .box {
+            background: #fff;
+            border-radius: 26px;
+            border: 1px solid rgba(15, 23, 42, .08);
+            box-shadow: 0 26px 80px rgba(15, 23, 42, .08);
+            padding: 20px;
+        }
+
+        .list {
+            margin-top: 12px;
+            display: grid;
+            gap: 10px
+        }
+
+        .item {
+            display: flex;
+            gap: 10px;
+            color: #334155;
+            font-size: 14px;
+            line-height: 1.6
+        }
+
+        .tick {
+            width: 22px;
+            height: 22px;
+            border-radius: 8px;
+            background: #dcfce7;
+            border: 1px solid rgba(34, 197, 94, .25);
+            display: grid;
+            place-items: center;
+            color: #16a34a;
+            font-weight: 700;
+            flex: 0 0 auto;
+            margin-top: 2px;
+        }
+
+        /* --------------- WHY CHOOSE --------------- */
+        .whyGrid {
+            margin-top: 22px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px
+        }
+
+        .why {
+            background: #fff;
+            border-radius: 22px;
+            border: 1px solid rgba(15, 23, 42, .08);
+            box-shadow: 0 18px 60px rgba(15, 23, 42, .06);
+            padding: 16px;
+        }
+
+        .whyIcon {
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            background: #eef2ff;
+            color: #1d4ed8;
+            display: grid;
+            place-items: center;
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .why h4 {
+            font-size: 16px;
+            margin-bottom: 6px
+        }
+
+        .why p {
+            font-size: 13px;
+            color: #475569;
+            line-height: 1.7
+        }
+
+        /* --------------- SERVICES --------------- */
+        .servicesGrid {
+            margin-top: 24px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px
+        }
+
+        .service {
+            border-radius: 26px;
+            overflow: hidden;
+            background: #fff;
+            border: 1px solid rgba(15, 23, 42, .08);
+            box-shadow: 0 26px 80px rgba(15, 23, 42, .07);
+            transition: .25s;
+        }
+
+        .service:hover {
+            transform: translateY(-6px)
+        }
+
+        .serviceImg {
+            height: 185px;
+            background-size: cover;
+            background-position: center
+        }
+
+        .serviceBody {
+            padding: 16px
+        }
+
+        .serviceBody h4 {
+            font-size: 18px;
+            margin-bottom: 6px
+        }
+
+        .serviceBody p {
+            font-size: 14px;
+            color: #475569;
+            line-height: 1.7
+        }
+
+        .tag {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 700;
+            background: #e0f2fe;
+            color: #075985;
+            border: 1px solid rgba(2, 132, 199, .20);
+        }
+
+        /* --------------- PRODUCTS GALLERY --------------- */
+        .galleryGrid {
+            margin-top: 22px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px
+        }
+
+        .gimg {
+            height: 170px;
+            border-radius: 22px;
+            border: 1px solid rgba(15, 23, 42, .08);
+            box-shadow: 0 18px 60px rgba(15, 23, 42, .06);
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gimg:after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, .45), transparent 60%);
+            opacity: .35;
+        }
+
+        /* --------------- ORIGINAL BRAND LOGOS AUTO SCROLL --------------- */
+        .brandsWrap {
+            margin-top: 18px;
+            background: #fff;
+            border: 1px solid rgba(15, 23, 42, .08);
+            box-shadow: 0 18px 60px rgba(15, 23, 42, .06);
+            border-radius: 26px;
+            padding: 18px;
+            overflow: hidden;
+        }
+
+        .brandsHead {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .brandsHead h3 {
+            font-size: 18px;
+            font-weight: 700
+        }
+
+        .brandsHint {
+            font-size: 12px;
+            color: #64748b;
+            font-weight: 700
+        }
+
+        .marquee {
+            overflow: hidden;
+            width: 100%
+        }
+
+        .track {
+            display: flex;
+            gap: 18px;
+            width: max-content;
+            animation: scroll 22s linear infinite;
+        }
+
+        .marquee:hover .track {
+            animation-play-state: paused
+        }
+
+        .brandLogoCard {
+            min-width: 150px;
+            height: 74px;
+            border-radius: 18px;
+            background: #f8fafc;
+            border: 1px solid rgba(15, 23, 42, .08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .brandLogoCard img {
+            max-height: 44px;
+            max-width: 120px;
+            object-fit: contain;
+            opacity: .95
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0)
+            }
+
+            100% {
+                transform: translateX(-50%)
+            }
+        }
+
+        /* --------------- CONTACT --------------- */
+        .contactGrid {
+            margin-top: 24px;
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 18px;
+            align-items: stretch
+        }
+
+        form {
+            display: grid;
+            gap: 12px;
+            margin-top: 10px
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border-radius: 14px;
+            border: 1px solid rgba(15, 23, 42, .12);
+            background: #fff;
+            color: #0f172a;
+            outline: none;
+        }
+
+        textarea {
+            min-height: 110px;
+            resize: vertical
+        }
+
+        .info {
+            display: grid;
+            gap: 12px;
+            margin-top: 12px;
+            font-size: 14px;
+            color: #334155
+        }
+
+        .infoBox {
+            padding: 12px;
+            border-radius: 16px;
+            background: #f8fafc;
+            border: 1px solid rgba(15, 23, 42, .08);
+            line-height: 1.7;
+        }
+
+        .mapWrap {
+            margin-top: 14px;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid rgba(15, 23, 42, .08);
+            height: 230px;
+        }
+
+        .mapWrap iframe {
+            width: 100%;
+            height: 100%;
+            border: 0
+        }
+
+        /* FOOTER */
+        footer {
+            border-top: 1px solid rgba(15, 23, 42, .10);
+            padding: 22px 0;
+            color: #475569;
+            font-size: 13px
+        }
+
+        .foot {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap
+        }
+
+        /* WHATSAPP */
+        .whatsapp {
+            position: fixed;
+            right: 18px;
+            bottom: 18px;
+            width: 58px;
+            height: 58px;
+            border-radius: 18px;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(90deg, #25D366, #128C7E);
+            box-shadow: 0 18px 50px rgba(18, 140, 126, .35);
+            z-index: 999;
+            transition: .2s;
+        }
+
+        .whatsapp:hover {
+            transform: translateY(-3px)
+        }
+
+        .whatsapp svg {
+            width: 30px;
+            height: 30px
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:700px) {
+            nav ul {
+                display: none
+            }
+
+            .heroGrid,
+            .aboutGrid,
+            .contactGrid {
+                grid-template-columns: 1fr
+            }
+
+            h1 {
+                font-size: 38px
+            }
+
+            .servicesGrid {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .whyGrid {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .galleryGrid {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .brandLogoCard {
+                min-width: 130px
+            }
+        }
+
+        @media(max-width:560px) {
+            .servicesGrid {
+                grid-template-columns: 1fr
+            }
+
+            h1 {
+                font-size: 34px
+            }
+
+            .brandLogoCard {
+                min-width: 120px
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <header>
+        <div class="nav">
+            <div class="brand">
+                <img src="logo.png" class="brandLogo" alt="I FIX UP Logo" />
+
+                <div>
+                    <div class="brandTitle">I FIX UP</div>
+                    <div class="brandSub">Computer Hardware • Software • Networking</div>
+                </div>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Service</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#brands">Brands</a></li>
+                    <li><a href="#contact">Contacts</a></li>
+                </ul>
+            </nav>
+
+            <a class="btn" href="#contact">Get Quote</a>
+        </div>
+    </header>
+
+    <!-- HOME -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="heroGrid">
+
+                <div>
+
+                    <h1>Computer Hardware & Software – Refurbished + Brand New</h1>
+                    <p class="muted">
+                        Used Laptop/Desktop buyers & recycle, Laptop/Desktop repair & service,
+                        Networking and servers setups, Refurbished laptop/desktop/server dealers,
+                        Data recovery support and firewall setups with dealers.
+                    </p>
+
+                    <div class="actions">
+                        <a href="#services" class="btn">Explore Services</a>
+                        <a href="#products" class="btn2">View Products</a>
+                    </div>
+
+                    <div style="margin-top:16px;color:#334155;font-weight:700;line-height:1.7;">
+                        ✅ Refurbished & Brand New Products <br />
+                        ✅ Laptop/Desktop Repair & Service <br />
+                        ✅ Networking & Server Setup <br />
+                        ✅ Used Buyers & Recycling
+                    </div>
+                </div>
+
+                <div class="heroCard">
+                    <div class="heroImg"></div>
+                    <div class="heroBody">
+                        <h3>All IT Products Available</h3>
+                        <p class="muted" style="font-size:14px">
+                            Laptop • Desktop • Server • Router • Switch • Accessories
+                        </p>
+
+                        <div class="stats">
+                            <div class="stat"><strong>New</strong><span>Latest Models</span></div>
+                            <div class="stat"><strong>Refurb</strong><span>Quality Checked</span></div>
+                            <div class="stat"><strong>Setup</strong><span>Network & Server</span></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="container">
+            <h2 class="title">About Us</h2>
+            <p class="subtitle">
+                I FIX UP is a complete IT solutions provider in Bengaluru offering refurbished and brand new computer
+                hardware,
+                software support, networking solutions, server setup, firewall and data recovery support.
+            </p>
+
+            <div class="aboutGrid">
+                <div class="aboutImg"></div>
+
+                <div class="box">
+                    <h3 style="font-size:22px;margin-bottom:6px;">One Stop IT Sales & Service Center</h3>
+                    <p class="muted" style="font-size:14px">
+                        From budget refurbished laptops to complete office networking/server setups, we provide the
+                        right product with reliable service.
+                    </p>
+
+                    <div class="list">
+                        <div class="item"><span class="tick">✓</span> Refurbished & New Laptops/Desktops/Servers</div>
+                        <div class="item"><span class="tick">✓</span> All kinds of computer accessories & products</div>
+                        <div class="item"><span class="tick">✓</span> Networking products dealer + setup (LAN/WiFi)
+                        </div>
+                        <div class="item"><span class="tick">✓</span> Firewall setup & data recovery support</div>
+                        <div class="item"><span class="tick">✓</span> Used laptop/desktop buyers and recycling</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE -->
+    <section>
+        <div class="container">
+            <h2 class="title">Why Choose I FIX UP?</h2>
+            <p class="subtitle">Professional service, quality products, affordable pricing and quick support.</p>
+
+            <div class="whyGrid">
+                <div class="why">
+                    <div class="whyIcon">⚡</div>
+                    <h4>Quick Service</h4>
+                    <p>Fast response for repair and support requirements.</p>
+                </div>
+                <div class="why">
+                    <div class="whyIcon">✅</div>
+                    <h4>Quality Checked</h4>
+                    <p>Refurbished products are tested and verified.</p>
+                </div>
+                <div class="why">
+                    <div class="whyIcon">🛡️</div>
+                    <h4>Secure Setup</h4>
+                    <p>Firewall and secure networking solutions for office.</p>
+                </div>
+                <div class="why">
+                    <div class="whyIcon">💰</div>
+                    <h4>Best Price</h4>
+                    <p>Affordable pricing and best deals for buyers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+        <div class="container">
+            <h2 class="title">Our Services</h2>
+            <p class="subtitle">Sales + Repair + Networking + Servers + Security + Support</p>
+
+            <div class="servicesGrid">
+
+                <div class="service">
+                    <div class="serviceImg"
+                        style="background-image:url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1400&q=80')">
+                    </div>
+                    <div class="serviceBody">
+                        <h4>Laptop/Desktop Repair</h4>
+                        <p>Hardware repair, OS installation, upgrades, servicing and complete maintenance.</p>
+                        <span class="tag">Fast Service</span>
+                    </div>
+                </div>
+
+                <div class="service">
+                    <div class="serviceImg" style="background-image:url(recycle.jpg)">
+                    </div>
+                    <div class="serviceBody">
+                        <h4>Used Buyers & Recycle</h4>
+                        <p>We purchase used laptops/desktops and recycle systems professionally.</p>
+                        <span class="tag">Best Price</span>
+                    </div>
+                </div>
+
+                <div class="service">
+                    <div class="serviceImg" style="background-image:url(network.jpg)">
+                    </div>
+                    <div class="serviceBody">
+                        <h4>Networking & Server Setup</h4>
+                        <p>LAN/WiFi, router/switch installation, rack setup and server configuration.</p>
+                        <span class="tag">Office Setup</span>
+                    </div>
+                </div>
+
+                <div class="service">
+                    <div class="serviceImg" style="background-image:url(sales.jpg)">
+                    </div>
+                    <div class="serviceBody">
+                        <h4>Refurbished & New Sales</h4>
+                        <p>Laptop/Desktop/Server sales with accessories and warranty support.</p>
+                        <span class="tag">Best Deals</span>
+                    </div>
+                </div>
+
+                <div class="service">
+                    <div class="serviceImg" style="background-image:url(firewall.jpg)">
+                    </div>
+                    <div class="serviceBody">
+                        <h4>Firewall & Security</h4>
+                        <p>Firewall setup, secure network configuration and access control solutions.</p>
+                        <span class="tag">Secure Network</span>
+                    </div>
+                </div>
+
+                <div class="service">
+                    <div class="serviceImg" style="background-image:url(hdr.jpg)">
+                    </div>
+                    <div class="serviceBody">
+                        <h4>Data Recovery Support</h4>
+                        <p>HDD/SSD recovery support and system crash support (subject to availability).</p>
+                        <span class="tag">HDD / SSD</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="products">
+        <div class="container">
+            <h2 class="title">Products & Gallery</h2>
+            <p class="subtitle">Refurbished + Brand New Laptop/Desktop/Servers & Networking Products Available.</p>
+
+            <div class="galleryGrid">
+                <div class="gimg" style="background-image:url(pc.jpg)">
+                </div>
+                <div class="gimg" style="background-image:url(recycle.jpg)">
+                </div>
+                <div class="gimg" style="background-image:url(hdd.jpg)">
+                </div>
+                <div class="gimg" style="background-image:url(firewall.jpg)">
+                </div>
+                <div class="gimg" style="background-image:url(server.jpg)">
+                </div>
+                <div class="gimg" style="background-image:url(sales.jpg)">
+                </div>
+                <div class="gimg" style="background-image:url(home.jpg)">
+                </div>
+                <div class="gimg" style="background-image:url(net.jpg)">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BRANDS (Original Logos Auto Scroll) -->
+    <section id="brands">
+        <div class="container">
+            <h2 class="title">Brands We Deal With</h2>
+            <p class="subtitle">Original brand logos in auto scrolling slider.</p>
+
+            <div class="brandsWrap">
+                <div class="brandsHead">
+                    <h3>Original Brand Logos</h3>
+                    <div class="brandsHint">Hover to pause</div>
+                </div>
+
+                <div class="marquee">
+                    <div class="track">
+
+                        <!-- SET 1 -->
+                        <div class="brandLogoCard"><img src="dell.png" alt="Dell">
+                        </div>
+                        <div class="brandLogoCard"><img src="hp.png" alt="HP">
+                        </div>
+                        <div class="brandLogoCard"><img src="lenova.png" alt="Lenovo"></div>
+                        <div class="brandLogoCard"><img src="Acer.png" alt="Acer">
+                        </div>
+                        <div class="brandLogoCard"><img src="Asus.png" alt="ASUS">
+                        </div>
+                        <div class="brandLogoCard"><img src="apple.png" alt="Apple"></div>
+                        <div class="brandLogoCard"><img src="intel.png" alt="Intel"></div>
+                        <div class="brandLogoCard"><img src="amd.png" alt="AMD"></div>
+                        <div class="brandLogoCard"><img src="nvidia.png" alt="NVIDIA">
+                        </div>
+                        <div class="brandLogoCard"><img src="microsoft.png" alt="Microsoft"></div>
+
+                        <!-- SET 2 (REPEAT) -->
+                        <div class="brandLogoCard"><img src="dell.png" alt="Dell">
+                        </div>
+                        <div class="brandLogoCard"><img src="hp.png" alt="HP">
+                        </div>
+                        <div class="brandLogoCard"><img src="lenova.png" alt="Lenovo"></div>
+                        <div class="brandLogoCard"><img src="Acer.png" alt="Acer">
+                        </div>
+                        <div class="brandLogoCard"><img src="Asus.png" alt="ASUS">
+                        </div>
+                        <div class="brandLogoCard"><img src="apple.png" alt="Apple"></div>
+                        <div class="brandLogoCard"><img src="intel.png" alt="Intel"></div>
+                        <div class="brandLogoCard"><img src="amd.png" alt="AMD"></div>
+                        <div class="brandLogoCard"><img src="nvidia.png" alt="NVIDIA">
+                        </div>
+                        <div class="brandLogoCard"><img src="microsoft.png" alt="Microsoft"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="title">Contacts</h2>
+            <p class="subtitle">For enquiry, products and service booking.</p>
+
+            <div class="contactGrid">
+
+                <div class="box">
+                    <h3 style="font-size:20px;margin-bottom:6px;">Send Enquiry</h3>
+                    <p class="muted" style="font-size:14px;">We will contact you quickly.</p>
+
+                    <form onsubmit="event.preventDefault(); alert('Enquiry sent successfully!'); this.reset();">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="tel" placeholder="Mobile Number" required>
+                        <input type="text" placeholder="Requirement (Laptop / Repair / Networking / Server)">
+                        <textarea placeholder="Message / Address" required></textarea>
+                        <button class="btn" type="submit">Send Enquiry</button>
+                    </form>
+                </div>
+
+                <div class="box">
+                    <h3 style="font-size:20px;margin-bottom:10px;">Company Details</h3>
+
+                    <div class="info">
+                        <div class="infoBox">
+                            <div style="display:flex; align-items:center; gap:12px; margin-bottom:8px;">
+                                <img src="logo.png" alt="I FIX UP Logo"
+                                    style="width:55px; height:55px; object-fit:contain; border-radius:12px; background:#fff; padding:6px; border:1px solid #ddd;">
+
+                                <strong style="color:#000000; font-weight:900; font-size:24px;">
+                                    I FIX UP
+                                </strong>
+                            </div>
+
+                            No.82, 7th Cross, 5th Main, Harijana Colony,<br />
+                            Ganganagar, Bangalore North, Bengaluru,<br />
+                            Karnataka - 560032
+                        </div>
+
+
+                        <div class="infoBox"><strong>Contact:</strong> +91 9692414482</div>
+
+                        <div class="infoBox">
+                            <strong>Business:</strong><br />
+                            ✔ Refurbished & Brand New Sales<br />
+                            ✔ Repair & Service Center<br />
+                            ✔ Networking & Server Setup<br />
+                            ✔ Buyers & Recycling
+                        </div>
+
+                        <div class="mapWrap">
+                            <iframe src="https://www.google.com/maps?q=Ganganagar%20Bengaluru%20560032&output=embed"
+                                loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="foot">
+                <div>© <span id="year"></span> I FIX UP. All Rights Reserved.</div>
+                <div>No.82, 7th Cross, 5th Main, Harijana Colony, Ganganagar, Bengaluru - 560032</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating -->
+    <a class="whatsapp"
+        href="https://wa.me/919692414482?text=Hello%20I%20FIX%20UP%2C%20I%20need%20details%20about%20laptop%2Fdesktop%2Fnetworking%20products%20and%20service."
+        target="_blank" title="Chat on WhatsApp">
+        <svg viewBox="0 0 32 32" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M16.04 2.003C8.29 2.003 2 8.24 2 15.93c0 2.72.82 5.24 2.23 7.35L2 30l6.95-2.18a14.1 14.1 0 0 0 7.09 1.92c7.75 0 14.04-6.24 14.04-13.93C30.08 8.24 23.79 2.003 16.04 2.003Zm8.21 19.69c-.34.96-1.7 1.78-2.75 2-1.02.2-2.33.36-6.75-1.45-5.31-2.17-8.73-7.51-9-7.87-.26-.35-2.17-2.87-2.17-5.48 0-2.61 1.37-3.9 1.86-4.43.49-.52 1.07-.65 1.42-.65h1.02c.33 0 .77-.12 1.2.92.43 1.04 1.44 3.61 1.56 3.87.13.26.22.57.04.92-.17.35-.26.57-.52.87-.26.3-.55.67-.78.9-.26.26-.52.55-.22 1.07.3.52 1.35 2.22 2.9 3.59 2 1.78 3.69 2.33 4.21 2.59.52.26.82.22 1.12-.13.3-.35 1.29-1.5 1.64-2.01.35-.52.7-.43 1.18-.26.48.17 3.05 1.44 3.57 1.7.52.26.87.39 1 .6.13.22.13 1.01-.22 1.97Z" />
+        </svg>
+    </a>
+
+    <script>
+        document.getElementById("year").innerText = new Date().getFullYear();
+
+        // Navbar shrink on scroll
+        const header = document.querySelector("header");
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 30) header.classList.add("scrolled");
+            else header.classList.remove("scrolled");
+        });
+    </script>
+
+</body>
+
+</html>
